@@ -1,0 +1,8 @@
+C:\Users\homer\source\repos\MatrizAdyacencia\MatrizAdyacencia\bin\Debug\MatrizAdyacencia.exe.config
+C:\Users\homer\source\repos\MatrizAdyacencia\MatrizAdyacencia\bin\Debug\MatrizAdyacencia.exe
+C:\Users\homer\source\repos\MatrizAdyacencia\MatrizAdyacencia\bin\Debug\MatrizAdyacencia.pdb
+C:\Users\homer\source\repos\MatrizAdyacencia\MatrizAdyacencia\obj\Debug\MatrizAdyacencia.csproj.AssemblyReference.cache
+C:\Users\homer\source\repos\MatrizAdyacencia\MatrizAdyacencia\obj\Debug\MatrizAdyacencia.csproj.CoreCompileInputs.cache
+C:\Users\homer\source\repos\MatrizAdyacencia\MatrizAdyacencia\obj\Debug\MatrizAdyacencia.exe
+C:\Users\homer\source\repos\MatrizAdyacencia\MatrizAdyacencia\obj\Debug\MatrizAdyacencia.pdb
+C:\Users\homer\source\repos\MatrizAdyacencia\MatrizAdyacencia\obj\Debug\MatrizAdyacencia.exe.config
