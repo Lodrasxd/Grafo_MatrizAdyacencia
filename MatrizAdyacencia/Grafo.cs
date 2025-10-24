@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -37,7 +38,7 @@ namespace MatrizAdyacencia
 
         public bool CheckArista(int src, int dst)
         {
-            return matriz[src, dst] == 1;
+            return matriz[src, dst] != 0;
         }
 
         public void Print()
@@ -146,6 +147,43 @@ namespace MatrizAdyacencia
                 }
             }
             return minIndex;
+        }
+        public void EliminarArista(int src, int dst)
+        {
+            matriz[src, dst] = 0;
+            if (!dirigido) matriz[dst, src] = 0;
+        }
+        public void RemoveNodo(int index)
+        {
+            if (index < 0 || index >= nodos.Count)
+            {
+                Console.WriteLine("Índice inválido");
+                return;
+            }
+
+            // Eliminar el nodo de la lista
+            nodos.RemoveAt(index);
+
+            int size = matriz.GetLength(0);
+            int[,] nuevaMatriz = new int[size - 1, size - 1];
+
+            // Copiar todas las filas y columnas excepto la que se elimina
+            int filaNueva = 0;
+            for (int i = 0; i < size; i++)
+            {
+                if (i == index) continue; // saltar la fila eliminada
+                int colNueva = 0;
+                for (int j = 0; j < size; j++)
+                {
+                    if (j == index) continue; // saltar la columna eliminada
+                    nuevaMatriz[filaNueva, colNueva] = matriz[i, j];
+                    colNueva++;
+                }
+                filaNueva++;
+            }
+
+            // Reemplazar la matriz antigua
+            matriz = nuevaMatriz;
         }
     }
 }

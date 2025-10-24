@@ -3,12 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\homer\\source\\repos\\MatrizAdyacencia\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{9F1367DA-8387-46CA-8B95-042BE3953D44}|MatrizAdyacencia\\MatrizAdyacencia.csproj|C:\\Users\\homer\\source\\repos\\MatrizAdyacencia\\matrizadyacencia\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9F1367DA-8387-46CA-8B95-042BE3953D44}|MatrizAdyacencia\\MatrizAdyacencia.csproj|solutionrelative:matrizadyacencia\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{9F1367DA-8387-46CA-8B95-042BE3953D44}|MatrizAdyacencia\\MatrizAdyacencia.csproj|c:\\users\\homer\\source\\repos\\matrizadyacencia\\matrizadyacencia\\grafo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9F1367DA-8387-46CA-8B95-042BE3953D44}|MatrizAdyacencia\\MatrizAdyacencia.csproj|solutionrelative:matrizadyacencia\\grafo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9F1367DA-8387-46CA-8B95-042BE3953D44}|MatrizAdyacencia\\MatrizAdyacencia.csproj|C:\\Users\\homer\\source\\repos\\MatrizAdyacencia\\matrizadyacencia\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9F1367DA-8387-46CA-8B95-042BE3953D44}|MatrizAdyacencia\\MatrizAdyacencia.csproj|solutionrelative:matrizadyacencia\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{9F1367DA-8387-46CA-8B95-042BE3953D44}|MatrizAdyacencia\\MatrizAdyacencia.csproj|C:\\Users\\homer\\source\\repos\\MatrizAdyacencia\\matrizadyacencia\\nodo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -22,17 +22,21 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 1,
           "Children": [
             {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "Grafo.cs",
               "DocumentMoniker": "C:\\Users\\homer\\source\\repos\\MatrizAdyacencia\\MatrizAdyacencia\\Grafo.cs",
               "RelativeDocumentMoniker": "MatrizAdyacencia\\Grafo.cs",
               "ToolTip": "C:\\Users\\homer\\source\\repos\\MatrizAdyacencia\\MatrizAdyacencia\\Grafo.cs",
               "RelativeToolTip": "MatrizAdyacencia\\Grafo.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAJcAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAQwLgAAAAOAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-10-19T22:55:34.751Z",
               "EditorCaption": ""
@@ -51,16 +55,15 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\homer\\source\\repos\\MatrizAdyacencia\\MatrizAdyacencia\\Program.cs",
               "RelativeDocumentMoniker": "MatrizAdyacencia\\Program.cs",
               "ToolTip": "C:\\Users\\homer\\source\\repos\\MatrizAdyacencia\\MatrizAdyacencia\\Program.cs",
               "RelativeToolTip": "MatrizAdyacencia\\Program.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAAB0AAAAiAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAAAiAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-19T22:54:46.195Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-19T22:54:46.195Z"
             }
           ]
         }
