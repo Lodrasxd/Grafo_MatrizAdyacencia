@@ -13,17 +13,37 @@ namespace MatrizAdyacencia
         private int[,] matriz;
         private bool dirigido;
         private bool ponderado;
-        public Grafo(int size,bool dirigido, bool ponderado)
+        public Grafo(bool dirigido, bool ponderado)
         {
             nodos = new List<Nodo>();
-            matriz = new int[size, size];
+            matriz = new int[0, 0];
             this.dirigido = dirigido;
             this.ponderado = ponderado;
         }
 
         public void AddNodo(Nodo nodo)
         {
+            bool existe = nodos.Any(n => n.Data == nodo.Data);
+
+            if (existe)
+            {
+                Console.WriteLine($"Error: ya existe un vértice con el identificador '{nodo.Data}'.");
+                return;
+            }
             nodos.Add(nodo);
+            int nuevoTam = nodos.Count;
+            int[,] nuevaMatriz = new int[nuevoTam, nuevoTam];
+
+            // Copiar los valores anteriores
+            for (int i = 0; i < nuevoTam - 1; i++)
+            {
+                for (int j = 0; j < nuevoTam - 1; j++)
+                {
+                    nuevaMatriz[i, j] = matriz[i, j];
+                }
+            }
+
+            matriz = nuevaMatriz; // Reemplaza la matriz anterior
         }
 
         public void AddArista(int src, int dst, int w = 1)
@@ -34,6 +54,20 @@ namespace MatrizAdyacencia
             {
                 matriz[dst, src] = w;
             }
+        }
+        public void AddArista(char src, char dst, int w = 1)
+        {
+            int i = ObtenerIndice(src);
+            int j = ObtenerIndice(dst);
+            if (i == -1 || j == -1)
+            {
+                Console.WriteLine($"Error: alguno de los vértices '{src}' o '{dst}' no existe.");
+                return;
+            }
+            matriz[i, j] = w;
+            if (!dirigido)
+                matriz[j, i] = w;
+            Console.WriteLine("Arista añadida");
         }
 
         public bool CheckArista(int src, int dst)
@@ -60,13 +94,19 @@ namespace MatrizAdyacencia
                 Console.WriteLine();
             }
         }
-        public void BFS(int start)
+        public void BFS(char start)
         {
+            int s = ObtenerIndice(start);
+            if (s == -1)
+            {
+                Console.WriteLine($"Error: el vértice '{s}' no existe.");
+                return;
+            }
             bool[] visitado = new bool[nodos.Count];
             Queue<int> cola = new Queue<int>();
 
-            visitado[start] = true;
-            cola.Enqueue(start);
+            visitado[s] = true;
+            cola.Enqueue(s);
 
             while (cola.Count > 0)
             {
@@ -84,10 +124,16 @@ namespace MatrizAdyacencia
             }
         }
 
-        public void DFS(int start)
+        public void DFS(char start)
         {
+            int s = ObtenerIndice(start);
+            if (s == -1)
+            {
+                Console.WriteLine($"Error: el vértice '{s}' no existe.");
+                return;
+            }
             bool[] visitado = new bool[nodos.Count];
-            DFSRecursivo(start, visitado);
+            DFSRecursivo(s, visitado);
         }
 
         private void DFSRecursivo(int v, bool[] visitado)
@@ -103,55 +149,23 @@ namespace MatrizAdyacencia
                 }
             }
         }
-
-        public void Dijkstra(int start)
-        {
-            int n = nodos.Count;
-            int[] distancia = new int[n];
-            bool[] visitado = new bool[n];
-
-            for (int i = 0; i < n; i++)
-                distancia[i] = int.MaxValue;
-
-            distancia[start] = 0;
-
-            for (int count = 0; count < n - 1; count++)
-            {
-                int u = MinDistancia(distancia, visitado);
-                visitado[u] = true;
-
-                for (int v = 0; v < n; v++)
-                {
-                    if (!visitado[v] && matriz[u, v] != 0 && distancia[u] != int.MaxValue &&
-                        distancia[u] + matriz[u, v] < distancia[v])
-                    {
-                        distancia[v] = distancia[u] + matriz[u, v];
-                    }
-                }
-            }
-
-            Console.WriteLine("\nDistancias mínimas desde " + nodos[start].Data + ":");
-            for (int i = 0; i < n; i++)
-                Console.WriteLine($"{nodos[start].Data} → {nodos[i].Data}: {distancia[i]}");
-        }
-
-        private int MinDistancia(int[] dist, bool[] visitado)
-        {
-            int min = int.MaxValue, minIndex = -1;
-            for (int v = 0; v < dist.Length; v++)
-            {
-                if (!visitado[v] && dist[v] <= min)
-                {
-                    min = dist[v];
-                    minIndex = v;
-                }
-            }
-            return minIndex;
-        }
         public void EliminarArista(int src, int dst)
         {
             matriz[src, dst] = 0;
             if (!dirigido) matriz[dst, src] = 0;
+        }
+        public void EliminarArista(char src, char dst)
+        {
+            int i = ObtenerIndice(src);
+            int j = ObtenerIndice(dst);
+            if (i == -1 || j == -1)
+            {
+                Console.WriteLine($"Error: alguno de los vértices '{src}' o '{dst}' no existe.");
+                return;
+            }
+            matriz[i, j] = 0;
+            if (!dirigido) matriz[j, i] = 0;
+            Console.WriteLine("Arista eliminada");
         }
         public void RemoveNodo(int index)
         {
@@ -184,6 +198,14 @@ namespace MatrizAdyacencia
 
             // Reemplazar la matriz antigua
             matriz = nuevaMatriz;
+        }
+        private int ObtenerIndice(char id)
+        {
+            for (int i = 0; i < nodos.Count; i++)
+            {
+                if (nodos[i].Data == id) return i;
+            }
+            return -1;
         }
     }
 }
