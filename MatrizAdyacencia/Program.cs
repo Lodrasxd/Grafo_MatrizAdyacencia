@@ -10,7 +10,7 @@ namespace MatrizAdyacencia
     {
         static void Main(string[] args)
         {
-            Grafo grafo = new Grafo(true,true);
+            Grafo grafo = new Grafo(true,false);
             Console.WriteLine("Que operacion desea realizar?");
             bool ciclo=true;
             int opcion=0;
