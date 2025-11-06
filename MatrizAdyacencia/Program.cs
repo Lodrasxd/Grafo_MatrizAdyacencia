@@ -17,7 +17,7 @@ namespace MatrizAdyacencia
             char a, b;
             while (ciclo == true)
             {
-                Console.WriteLine("1.-Añadir vertice \n2.-Añadir arista\n3.-Eliminar arista\n4.-Eliminar nodo\n5.-Imprimir matriz de adyacencia\n6.-Realizar busqueda por amplitud (BFS)\n7.-Reealizar Busqueda en profundidad (DFS)\n8.-Salir");
+                Console.WriteLine("1.-Añadir vertice \n2.-Añadir arista\n3.-Eliminar arista\n4.-Eliminar vertice\n5.-Imprimir matriz de adyacencia\n6.-Realizar busqueda por amplitud (BFS)\n7.-Reealizar Busqueda en profundidad (DFS)\n8.-Salir");
                 opcion = int.Parse(Console.ReadLine());
                 switch (opcion) 
                 {
