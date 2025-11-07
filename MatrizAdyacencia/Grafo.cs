@@ -69,6 +69,7 @@ namespace MatrizAdyacencia
                 Console.WriteLine("Error: Ya hay un arista asignada");
                 return;
             }
+            if (!ponderado) w = 1;
             matriz[i, j] = w;
             if (!dirigido)
                 matriz[j, i] = w;
@@ -80,24 +81,32 @@ namespace MatrizAdyacencia
             return matriz[src, dst] != 0;
         }
 
-        public void Print()
+        public string Print()
         {
-            Console.Write("  ");
+            //Console.Write("  ");
+            string matrizString;
+            matrizString = "  ";
             foreach (var node in nodos)
             {
-                Console.Write(node.Data + " ");
+              //  Console.Write(node.Data + " ");
+                matrizString += node.Data + " ";
             }
-            Console.WriteLine();
+            //Console.WriteLine();
+            matrizString += "\n";
 
             for (int i = 0; i < matriz.GetLength(0); i++)
             {
-                Console.Write(nodos[i].Data + " ");
+                //Console.Write(nodos[i].Data + " ");
+                matrizString += nodos[i].Data + " ";
                 for (int j = 0; j < matriz.GetLength(1); j++)
                 {
-                    Console.Write(matriz[i, j] + " ");
+                //    Console.Write(matriz[i, j] + " ");
+                    matrizString += matriz[i, j] + " ";
                 }
-                Console.WriteLine();
+                //Console.WriteLine();
+                matrizString += "\n";
             }
+            return matrizString;
         }
         public void BFS(char start)
         {

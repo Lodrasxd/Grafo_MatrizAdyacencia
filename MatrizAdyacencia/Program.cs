@@ -55,7 +55,7 @@ namespace MatrizAdyacencia
                         Console.Clear();
                         break;
                     case 5: Console.WriteLine("Matriz de Adyacencia:\n");
-                        grafo.Print();
+                        Console.WriteLine(grafo.Print());
                         Console.ReadKey();
                         Console.Clear();
                         break;
